@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-bs-navbar',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bs-navbar.component.css']
 })
 export class BsNavbarComponent implements OnInit {
+  
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(public authService: AuthService) { 
+    
   }
 
+  ngOnInit(): void {
+    
+  }
+
+  logout(){
+    this.authService.logout();
+  }
 }
